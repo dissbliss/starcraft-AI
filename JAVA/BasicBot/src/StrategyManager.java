@@ -108,128 +108,56 @@ public class StrategyManager {
 
 	public void setInitialBuildOrder() {
 		if (MyBotModule.Broodwar.self().getRace() == Race.Protoss) {
-			BuildManager.Instance().buildQueue.queueAsLowestPriority(InformationManager.Instance().getWorkerType(),
-					BuildOrderItem.SeedPositionStrategy.MainBaseLocation, true);
-			BuildManager.Instance().buildQueue.queueAsLowestPriority(InformationManager.Instance().getWorkerType(),
-					BuildOrderItem.SeedPositionStrategy.MainBaseLocation, true);
-			BuildManager.Instance().buildQueue.queueAsLowestPriority(
-					InformationManager.Instance().getBasicSupplyProviderUnitType(),
-					BuildOrderItem.SeedPositionStrategy.MainBaseLocation, true);
-			BuildManager.Instance().buildQueue.queueAsLowestPriority(InformationManager.Instance().getWorkerType(),
-					BuildOrderItem.SeedPositionStrategy.MainBaseLocation, true);
-			BuildManager.Instance().buildQueue.queueAsLowestPriority(UnitType.Protoss_Gateway,
-					BuildOrderItem.SeedPositionStrategy.MainBaseLocation, true);
-			BuildManager.Instance().buildQueue.queueAsLowestPriority(InformationManager.Instance().getWorkerType(),
-					BuildOrderItem.SeedPositionStrategy.MainBaseLocation, true);
-			BuildManager.Instance().buildQueue.queueAsLowestPriority(InformationManager.Instance().getWorkerType(),
-					BuildOrderItem.SeedPositionStrategy.MainBaseLocation, true);
-			BuildManager.Instance().buildQueue.queueAsLowestPriority(UnitType.Protoss_Zealot,
-					BuildOrderItem.SeedPositionStrategy.MainBaseLocation, true);
+			BuildManager.Instance().buildQueue.queueAsLowestPriority(InformationManager.Instance().getWorkerType());
+			BuildManager.Instance().buildQueue.queueAsLowestPriority(InformationManager.Instance().getWorkerType());
+			BuildManager.Instance().buildQueue.queueAsLowestPriority(InformationManager.Instance().getWorkerType());
 
-			/*
-			BuildManager.Instance().buildQueue.queueAsLowestPriority(UnitType.Protoss_Assimilator,
-					BuildOrderItem.SeedPositionStrategy.MainBaseLocation);
+			// SupplyUsed가 7 일때 파일런 빌드
+			BuildManager.Instance().buildQueue.queueAsLowestPriority(InformationManager.Instance().getBasicSupplyProviderUnitType(), BuildOrderItem.SeedPositionStrategy.MainBaseLocation);
 
-			BuildManager.Instance().buildQueue.queueAsLowestPriority(UnitType.Protoss_Forge,
-					BuildOrderItem.SeedPositionStrategy.MainBaseLocation);
-			BuildManager.Instance().buildQueue.queueAsLowestPriority(UnitType.Protoss_Photon_Cannon,
-					BuildOrderItem.SeedPositionStrategy.MainBaseLocation);
+			BuildManager.Instance().buildQueue.queueAsLowestPriority(InformationManager.Instance().getWorkerType());
 
-			BuildManager.Instance().buildQueue.queueAsLowestPriority(UnitType.Protoss_Gateway,
-					BuildOrderItem.SeedPositionStrategy.MainBaseLocation);
+			// SupplyUsed가 8 일때 1번째 게이트웨이 빌드
+			BuildManager.Instance().buildQueue.queueAsLowestPriority(UnitType.Protoss_Gateway, BuildOrderItem.SeedPositionStrategy.MainBaseLocation);
+			
+			BuildManager.Instance().buildQueue.queueAsLowestPriority(InformationManager.Instance().getWorkerType());
+
+			// SupplyUsed가 9 일때 가스 리파이너리 빌드
+			BuildManager.Instance().buildQueue.queueAsLowestPriority(InformationManager.Instance().getRefineryBuildingType());
+
+			BuildManager.Instance().buildQueue.queueAsLowestPriority(InformationManager.Instance().getWorkerType());
+
+			// SupplyUsed가 10 일때 사이버네틱스 코어 빌드
+			BuildManager.Instance().buildQueue.queueAsLowestPriority(UnitType.Protoss_Cybernetics_Core, BuildOrderItem.SeedPositionStrategy.MainBaseLocation);
+
+			// 1번째 질럿 빌드
 			BuildManager.Instance().buildQueue.queueAsLowestPriority(UnitType.Protoss_Zealot);
 
-			BuildManager.Instance().buildQueue.queueAsLowestPriority(UnitType.Protoss_Cybernetics_Core,
-					BuildOrderItem.SeedPositionStrategy.MainBaseLocation);
-			BuildManager.Instance().buildQueue.queueAsLowestPriority(UnitType.Protoss_Dragoon);
-			// 드라군 사정거리 업그레이드
-			BuildManager.Instance().buildQueue.queueAsLowestPriority(UpgradeType.Singularity_Charge);
-
+			// SupplyUsed가 12 일때 시타델 오브 아둔 빌드
 			BuildManager.Instance().buildQueue.queueAsLowestPriority(UnitType.Protoss_Citadel_of_Adun);
-			// 질럿 속도 업그레이드
-			BuildManager.Instance().buildQueue.queueAsLowestPriority(UpgradeType.Leg_Enhancements);
 
-			BuildManager.Instance().buildQueue.queueAsLowestPriority(UnitType.Protoss_Shield_Battery);
+			BuildManager.Instance().buildQueue.queueAsLowestPriority(InformationManager.Instance().getWorkerType());
+			BuildManager.Instance().buildQueue.queueAsLowestPriority(InformationManager.Instance().getWorkerType());
 
+			// SupplyUsed가 14 일때 템플러 아카이브, 2번째 게이트웨이 빌드
 			BuildManager.Instance().buildQueue.queueAsLowestPriority(UnitType.Protoss_Templar_Archives);
-			// 하이템플러
-			BuildManager.Instance().buildQueue.queueAsLowestPriority(UnitType.Protoss_High_Templar);
-			BuildManager.Instance().buildQueue.queueAsLowestPriority(UnitType.Protoss_High_Templar);
-			BuildManager.Instance().buildQueue.queueAsLowestPriority(TechType.Psionic_Storm);
-			BuildManager.Instance().buildQueue.queueAsLowestPriority(TechType.Hallucination);
-			BuildManager.Instance().buildQueue.queueAsLowestPriority(UpgradeType.Khaydarin_Amulet);
-			BuildManager.Instance().buildQueue.queueAsLowestPriority(UnitType.Protoss_Archon);
+			BuildManager.Instance().buildQueue.queueAsLowestPriority(UnitType.Protoss_Gateway, BuildOrderItem.SeedPositionStrategy.MainBaseLocation);
 
-			// 다크아칸
+			// 2번째 질럿 빌드
+			BuildManager.Instance().buildQueue.queueAsLowestPriority(UnitType.Protoss_Zealot);
+
+			// SupplyUsed가 16 일때 파일런 빌드
+			BuildManager.Instance().buildQueue.queueAsLowestPriority(InformationManager.Instance().getBasicSupplyProviderUnitType(), BuildOrderItem.SeedPositionStrategy.MainBaseLocation);
+
+			BuildManager.Instance().buildQueue.queueAsLowestPriority(InformationManager.Instance().getWorkerType());
+
+			// 4마리 다크 템플러 빌드 후 파일런 빌드
 			BuildManager.Instance().buildQueue.queueAsLowestPriority(UnitType.Protoss_Dark_Templar);
 			BuildManager.Instance().buildQueue.queueAsLowestPriority(UnitType.Protoss_Dark_Templar);
-			BuildManager.Instance().buildQueue.queueAsLowestPriority(TechType.Maelstrom);
-			BuildManager.Instance().buildQueue.queueAsLowestPriority(TechType.Mind_Control);
-			BuildManager.Instance().buildQueue.queueAsLowestPriority(UpgradeType.Argus_Talisman);
-			BuildManager.Instance().buildQueue.queueAsLowestPriority(UnitType.Protoss_Dark_Archon);
+			BuildManager.Instance().buildQueue.queueAsLowestPriority(UnitType.Protoss_Dark_Templar);
+			BuildManager.Instance().buildQueue.queueAsLowestPriority(UnitType.Protoss_Dark_Templar);
+			BuildManager.Instance().buildQueue.queueAsLowestPriority(InformationManager.Instance().getBasicSupplyProviderUnitType(), BuildOrderItem.SeedPositionStrategy.MainBaseLocation);
 
-			BuildManager.Instance().buildQueue.queueAsLowestPriority(UnitType.Protoss_Robotics_Facility);
-
-			// 셔틀
-			BuildManager.Instance().buildQueue.queueAsLowestPriority(UnitType.Protoss_Shuttle);
-			BuildManager.Instance().buildQueue.queueAsLowestPriority(UnitType.Protoss_Robotics_Support_Bay);
-			BuildManager.Instance().buildQueue.queueAsLowestPriority(UpgradeType.Gravitic_Drive);
-
-			// 리버
-			BuildManager.Instance().buildQueue.queueAsLowestPriority(UnitType.Protoss_Reaver);
-			BuildManager.Instance().buildQueue.queueAsLowestPriority(UpgradeType.Scarab_Damage);
-			BuildManager.Instance().buildQueue.queueAsLowestPriority(UpgradeType.Reaver_Capacity);
-			BuildManager.Instance().buildQueue.queueAsLowestPriority(UnitType.Protoss_Scarab);
-
-			BuildManager.Instance().buildQueue.queueAsLowestPriority(UnitType.Protoss_Observatory);
-			// 옵저버
-			BuildManager.Instance().buildQueue.queueAsLowestPriority(UnitType.Protoss_Observer);
-			BuildManager.Instance().buildQueue.queueAsLowestPriority(UpgradeType.Gravitic_Boosters);
-			BuildManager.Instance().buildQueue.queueAsLowestPriority(UpgradeType.Sensor_Array);
-
-			// 공중유닛
-			BuildManager.Instance().buildQueue.queueAsLowestPriority(UnitType.Protoss_Stargate);
-			BuildManager.Instance().buildQueue.queueAsLowestPriority(UnitType.Protoss_Fleet_Beacon);
-
-			// 스카우트
-			BuildManager.Instance().buildQueue.queueAsLowestPriority(UnitType.Protoss_Scout);
-			BuildManager.Instance().buildQueue.queueAsLowestPriority(UpgradeType.Apial_Sensors);
-			BuildManager.Instance().buildQueue.queueAsLowestPriority(UpgradeType.Gravitic_Thrusters);
-
-			// 커세어
-			BuildManager.Instance().buildQueue.queueAsLowestPriority(UnitType.Protoss_Corsair);
-			BuildManager.Instance().buildQueue.queueAsLowestPriority(TechType.Disruption_Web);
-			BuildManager.Instance().buildQueue.queueAsLowestPriority(UpgradeType.Argus_Jewel);
-
-			// 캐리어
-			BuildManager.Instance().buildQueue.queueAsLowestPriority(UnitType.Protoss_Carrier);
-			BuildManager.Instance().buildQueue.queueAsLowestPriority(UpgradeType.Carrier_Capacity);
-			BuildManager.Instance().buildQueue.queueAsLowestPriority(UnitType.Protoss_Interceptor);
-			BuildManager.Instance().buildQueue.queueAsLowestPriority(UnitType.Protoss_Interceptor);
-			BuildManager.Instance().buildQueue.queueAsLowestPriority(UnitType.Protoss_Interceptor);
-			BuildManager.Instance().buildQueue.queueAsLowestPriority(UnitType.Protoss_Interceptor);
-			BuildManager.Instance().buildQueue.queueAsLowestPriority(UnitType.Protoss_Interceptor);
-			BuildManager.Instance().buildQueue.queueAsLowestPriority(UnitType.Protoss_Interceptor);
-			BuildManager.Instance().buildQueue.queueAsLowestPriority(UnitType.Protoss_Interceptor);
-			BuildManager.Instance().buildQueue.queueAsLowestPriority(UnitType.Protoss_Interceptor);
-
-			// 아비터
-			BuildManager.Instance().buildQueue.queueAsLowestPriority(UnitType.Protoss_Arbiter_Tribunal);
-			BuildManager.Instance().buildQueue.queueAsLowestPriority(UnitType.Protoss_Arbiter);
-			BuildManager.Instance().buildQueue.queueAsLowestPriority(TechType.Recall);
-			BuildManager.Instance().buildQueue.queueAsLowestPriority(TechType.Stasis_Field);
-			BuildManager.Instance().buildQueue.queueAsLowestPriority(UpgradeType.Khaydarin_Core);
-
-			// 포지 - 지상 유닛 업그레이드
-			BuildManager.Instance().buildQueue.queueAsLowestPriority(UpgradeType.Protoss_Ground_Weapons);
-			BuildManager.Instance().buildQueue.queueAsLowestPriority(UpgradeType.Protoss_Plasma_Shields);
-			BuildManager.Instance().buildQueue.queueAsLowestPriority(UpgradeType.Protoss_Ground_Armor);
-
-			// 사이버네틱스코어 - 공중 유닛 업그레이드
-			BuildManager.Instance().buildQueue.queueAsLowestPriority(UpgradeType.Protoss_Air_Weapons);
-			BuildManager.Instance().buildQueue.queueAsLowestPriority(UpgradeType.Protoss_Air_Armor);
-
-			*/
 		} 
 		else if (MyBotModule.Broodwar.self().getRace() == Race.Terran) {
 			BuildManager.Instance().buildQueue.queueAsLowestPriority(InformationManager.Instance().getWorkerType(),
@@ -720,8 +648,8 @@ public class StrategyManager {
 				}
 			}
 
-			// 전투 유닛이 2개 이상 생산되었고, 적군 위치가 파악되었으면 총공격 모드로 전환
-			if (MyBotModule.Broodwar.self().completedUnitCount(InformationManager.Instance().getBasicCombatUnitType()) > 2) {
+			// Protoss_Dark_Templar 유닛이 2개 이상 생산되었고, 적군 위치가 파악되었으면 총공격 모드로 전환
+			if (MyBotModule.Broodwar.self().completedUnitCount(UnitType.Protoss_Dark_Templar) >= 2) {
 				if (InformationManager.Instance().enemyPlayer != null
 					&& InformationManager.Instance().enemyRace != Race.Unknown  
 					&& InformationManager.Instance().getOccupiedBaseLocations(InformationManager.Instance().enemyPlayer).size() > 0) {				
