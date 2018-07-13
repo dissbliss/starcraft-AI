@@ -368,175 +368,36 @@ public class StrategyManager {
 			*/
 		} 
 		else if (MyBotModule.Broodwar.self().getRace() == Race.Zerg) {
-			BuildManager.Instance().buildQueue.queueAsLowestPriority(InformationManager.Instance().getWorkerType(),
-					BuildOrderItem.SeedPositionStrategy.MainBaseLocation, true);
-			BuildManager.Instance().buildQueue.queueAsLowestPriority(InformationManager.Instance().getWorkerType(),
-					BuildOrderItem.SeedPositionStrategy.MainBaseLocation, true);
-			BuildManager.Instance().buildQueue.queueAsLowestPriority(UnitType.Zerg_Spawning_Pool,
-					BuildOrderItem.SeedPositionStrategy.MainBaseLocation, true);
-			BuildManager.Instance().buildQueue.queueAsLowestPriority(InformationManager.Instance().getWorkerType(),
-					BuildOrderItem.SeedPositionStrategy.MainBaseLocation, true);
-			BuildManager.Instance().buildQueue.queueAsLowestPriority(UnitType.Zerg_Zergling,
-					BuildOrderItem.SeedPositionStrategy.MainBaseLocation, true);
-			BuildManager.Instance().buildQueue.queueAsLowestPriority(UnitType.Zerg_Zergling,
-					BuildOrderItem.SeedPositionStrategy.MainBaseLocation, true);
-			BuildManager.Instance().buildQueue.queueAsLowestPriority(UnitType.Zerg_Zergling,
-					BuildOrderItem.SeedPositionStrategy.MainBaseLocation, true);
-			BuildManager.Instance().buildQueue.queueAsLowestPriority(InformationManager.Instance().getBasicSupplyProviderUnitType(),
-					BuildOrderItem.SeedPositionStrategy.MainBaseLocation, true);
+			BuildManager.Instance().buildQueue.queueAsLowestPriority(InformationManager.Instance().getWorkerType());
+			BuildManager.Instance().buildQueue.queueAsLowestPriority(InformationManager.Instance().getWorkerType());
 
-			/*
-			BuildManager.Instance().buildQueue.queueAsLowestPriority(UnitType.Zerg_Hatchery,
-					BuildOrderItem.SeedPositionStrategy.MainBaseLocation);
-			BuildManager.Instance().buildQueue.queueAsLowestPriority(InformationManager.Instance().getWorkerType(),
-					BuildOrderItem.SeedPositionStrategy.MainBaseLocation, true);
-			BuildManager.Instance().buildQueue.queueAsLowestPriority(UnitType.Zerg_Hatchery,
-					BuildOrderItem.SeedPositionStrategy.FirstExpansionLocation);
-			BuildManager.Instance().buildQueue.queueAsLowestPriority(InformationManager.Instance().getWorkerType(),
-					BuildOrderItem.SeedPositionStrategy.MainBaseLocation, true);
-			BuildManager.Instance().buildQueue.queueAsLowestPriority(UnitType.Zerg_Hatchery,
-					BuildOrderItem.SeedPositionStrategy.FirstExpansionLocation);
-			BuildManager.Instance().buildQueue.queueAsLowestPriority(InformationManager.Instance().getWorkerType(),
-					BuildOrderItem.SeedPositionStrategy.MainBaseLocation, true);
-			BuildManager.Instance().buildQueue.queueAsLowestPriority(
-					InformationManager.Instance().getBasicSupplyProviderUnitType(),
-					BuildOrderItem.SeedPositionStrategy.MainBaseLocation, true);
-			BuildManager.Instance().buildQueue.queueAsLowestPriority(InformationManager.Instance().getWorkerType(),
-					BuildOrderItem.SeedPositionStrategy.MainBaseLocation, true);
-			BuildManager.Instance().buildQueue.queueAsLowestPriority(InformationManager.Instance().getWorkerType(),
-					BuildOrderItem.SeedPositionStrategy.MainBaseLocation, true);
-			BuildManager.Instance().buildQueue.queueAsLowestPriority(InformationManager.Instance().getWorkerType(),
-					BuildOrderItem.SeedPositionStrategy.MainBaseLocation, true);
-			BuildManager.Instance().buildQueue.queueAsLowestPriority(InformationManager.Instance().getWorkerType(),
-					BuildOrderItem.SeedPositionStrategy.MainBaseLocation, true);
-			BuildManager.Instance().buildQueue.queueAsLowestPriority(InformationManager.Instance().getWorkerType(),
-					BuildOrderItem.SeedPositionStrategy.MainBaseLocation, true);
-			BuildManager.Instance().buildQueue.queueAsLowestPriority(InformationManager.Instance().getWorkerType(),
-					BuildOrderItem.SeedPositionStrategy.MainBaseLocation, true);
+			// SupplyUsed가 6 일때 스포닝풀
+			BuildManager.Instance().buildQueue.queueAsLowestPriority(UnitType.Zerg_Spawning_Pool, BuildOrderItem.SeedPositionStrategy.MainBaseLocation);
+			BuildManager.Instance().buildQueue.queueAsLowestPriority(InformationManager.Instance().getWorkerType());
 
-			// 가스 익스트랙터
-			BuildManager.Instance().buildQueue.queueAsLowestPriority(UnitType.Zerg_Extractor,
-					BuildOrderItem.SeedPositionStrategy.MainBaseLocation);
-
-			// 성큰 콜로니
-			BuildManager.Instance().buildQueue.queueAsLowestPriority(UnitType.Zerg_Creep_Colony,
-					BuildOrderItem.SeedPositionStrategy.MainBaseLocation);
-			BuildManager.Instance().buildQueue.queueAsLowestPriority(UnitType.Zerg_Sunken_Colony,
-					BuildOrderItem.SeedPositionStrategy.MainBaseLocation);
-
-			BuildManager.Instance().buildQueue
-					.queueAsLowestPriority(InformationManager.Instance().getRefineryBuildingType());
-
-			// 저글링 이동속도 업
-			BuildManager.Instance().buildQueue.queueAsLowestPriority(UpgradeType.Metabolic_Boost);
-
-			// 에볼루션 챔버
-			BuildManager.Instance().buildQueue.queueAsLowestPriority(UnitType.Zerg_Evolution_Chamber);
-			// 에볼루션 챔버 . 지상유닛 업그레이드
-			BuildManager.Instance().buildQueue.queueAsLowestPriority(UpgradeType.Zerg_Melee_Attacks, false);
-			BuildManager.Instance().buildQueue.queueAsLowestPriority(UpgradeType.Zerg_Missile_Attacks, false);
-			BuildManager.Instance().buildQueue.queueAsLowestPriority(UpgradeType.Zerg_Carapace, false);
-
-			BuildManager.Instance().buildQueue.queueAsLowestPriority(InformationManager.Instance().getWorkerType());
-			BuildManager.Instance().buildQueue.queueAsLowestPriority(InformationManager.Instance().getWorkerType());
-			BuildManager.Instance().buildQueue.queueAsLowestPriority(InformationManager.Instance().getWorkerType());
-			BuildManager.Instance().buildQueue.queueAsLowestPriority(InformationManager.Instance().getWorkerType());
-			BuildManager.Instance().buildQueue.queueAsLowestPriority(InformationManager.Instance().getWorkerType());
-			BuildManager.Instance().buildQueue.queueAsLowestPriority(InformationManager.Instance().getWorkerType());
-			BuildManager.Instance().buildQueue.queueAsLowestPriority(InformationManager.Instance().getWorkerType());
-			BuildManager.Instance().buildQueue.queueAsLowestPriority(InformationManager.Instance().getWorkerType());
-			BuildManager.Instance().buildQueue.queueAsLowestPriority(InformationManager.Instance().getWorkerType());
+			// 6 저글링 생산 
+			BuildManager.Instance().buildQueue.queueAsLowestPriority(UnitType.Zerg_Zergling);
+			BuildManager.Instance().buildQueue.queueAsLowestPriority(UnitType.Zerg_Zergling);
+			BuildManager.Instance().buildQueue.queueAsLowestPriority(UnitType.Zerg_Zergling);
+			BuildManager.Instance().buildQueue.queueAsLowestPriority(UnitType.Zerg_Overlord);
 			
-			// 스포어 코로니
-			BuildManager.Instance().buildQueue.queueAsLowestPriority(UnitType.Zerg_Creep_Colony,
-					BuildOrderItem.SeedPositionStrategy.MainBaseLocation);
-			BuildManager.Instance().buildQueue.queueAsLowestPriority(UnitType.Zerg_Spore_Colony,
-					BuildOrderItem.SeedPositionStrategy.MainBaseLocation);
-
-			// 히드라
-			BuildManager.Instance().buildQueue.queueAsLowestPriority(UnitType.Zerg_Hydralisk_Den);
-			BuildManager.Instance().buildQueue.queueAsLowestPriority(UnitType.Zerg_Hydralisk);
-
-			// 레어
-			BuildManager.Instance().buildQueue.queueAsLowestPriority(UnitType.Zerg_Lair);
-
-			// 오버로드 운반가능
-			BuildManager.Instance().buildQueue.queueAsLowestPriority(UpgradeType.Ventral_Sacs);
-			// 오버로드 시야 증가
-			BuildManager.Instance().buildQueue.queueAsLowestPriority(UpgradeType.Antennae);
-			// 오버로드 속도 증가
-			BuildManager.Instance().buildQueue.queueAsLowestPriority(UpgradeType.Pneumatized_Carapace);
-
-			// 히드라 이동속도 업
-			BuildManager.Instance().buildQueue.queueAsLowestPriority(UpgradeType.Muscular_Augments, false);
-			// 히드라 공격 사정거리 업
-			BuildManager.Instance().buildQueue.queueAsLowestPriority(UpgradeType.Grooved_Spines, false);
-
-			// 럴커
-			BuildManager.Instance().buildQueue.queueAsLowestPriority(TechType.Lurker_Aspect);
-			BuildManager.Instance().buildQueue.queueAsLowestPriority(UnitType.Zerg_Hydralisk);
-			BuildManager.Instance().buildQueue.queueAsLowestPriority(UnitType.Zerg_Lurker);
-
-			// 스파이어
-			BuildManager.Instance().buildQueue.queueAsLowestPriority(UnitType.Zerg_Spire, true);
-			BuildManager.Instance().buildQueue.queueAsLowestPriority(UnitType.Zerg_Mutalisk, true);
-			BuildManager.Instance().buildQueue.queueAsLowestPriority(UnitType.Zerg_Scourge, true);
-
-			// 스파이어 . 공중유닛 업그레이드
-			BuildManager.Instance().buildQueue.queueAsLowestPriority(UpgradeType.Zerg_Flyer_Attacks, false);
-			BuildManager.Instance().buildQueue.queueAsLowestPriority(UpgradeType.Zerg_Flyer_Carapace, false);
-
-			// 퀸
-			BuildManager.Instance().buildQueue.queueAsLowestPriority(UnitType.Zerg_Queens_Nest);
-			BuildManager.Instance().buildQueue.queueAsLowestPriority(UnitType.Zerg_Queen);
-			BuildManager.Instance().buildQueue.queueAsLowestPriority(TechType.Spawn_Broodlings, false);
-			BuildManager.Instance().buildQueue.queueAsLowestPriority(TechType.Ensnare, false);
-			BuildManager.Instance().buildQueue.queueAsLowestPriority(UpgradeType.Gamete_Meiosis, false);
-
-			// 하이브
-			BuildManager.Instance().buildQueue.queueAsLowestPriority(UnitType.Zerg_Hive);
-			// 저글링 공격 속도 업
-			BuildManager.Instance().buildQueue.queueAsLowestPriority(UpgradeType.Adrenal_Glands, false);
-
-			// 스파이어 . 그레이트 스파이어
-			BuildManager.Instance().buildQueue.queueAsLowestPriority(UnitType.Zerg_Greater_Spire, true);
-			BuildManager.Instance().buildQueue.queueAsLowestPriority(UnitType.Zerg_Mutalisk, true);
-			BuildManager.Instance().buildQueue.queueAsLowestPriority(UnitType.Zerg_Guardian, true);
-			BuildManager.Instance().buildQueue.queueAsLowestPriority(UnitType.Zerg_Mutalisk, true);
-			BuildManager.Instance().buildQueue.queueAsLowestPriority(UnitType.Zerg_Devourer, true);
-
-			// 울트라리스크
-			BuildManager.Instance().buildQueue.queueAsLowestPriority(UnitType.Zerg_Ultralisk_Cavern);
-			BuildManager.Instance().buildQueue.queueAsLowestPriority(UnitType.Zerg_Ultralisk);
-			// 울트라리스크 이동속도 업
-			BuildManager.Instance().buildQueue.queueAsLowestPriority(UpgradeType.Anabolic_Synthesis, false);
-			// 울트라리스크 방어력 업
-			BuildManager.Instance().buildQueue.queueAsLowestPriority(UpgradeType.Chitinous_Plating, false);
-
-			// 디파일러
-			BuildManager.Instance().buildQueue.queueAsLowestPriority(UnitType.Zerg_Defiler_Mound);
-			BuildManager.Instance().buildQueue.queueAsLowestPriority(UnitType.Zerg_Defiler);
-			BuildManager.Instance().buildQueue.queueAsLowestPriority(TechType.Consume, false);
-			BuildManager.Instance().buildQueue.queueAsLowestPriority(TechType.Plague, false);
-			// 디파일러 에너지 업
-			BuildManager.Instance().buildQueue.queueAsLowestPriority(UpgradeType.Metasynaptic_Node, false);
-
-			// 나이더스 캐널
-			BuildManager.Instance().buildQueue.queueAsLowestPriority(UnitType.Zerg_Nydus_Canal);
-
-			// 참고로, Zerg_Nydus_Canal 건물로부터 Nydus Canal Exit를 만드는 방법은 다음과 같습니다
-			//if (MyBotModule.Broodwar.self().completedUnitCount(UnitType.Zerg_Nydus_Canal) > 0) {
-			//	for (Unit unit : MyBotModule.Broodwar.self().getUnits()) {
-			//		if (unit.getType() == UnitType.Zerg_Nydus_Canal) {
-			//			TilePosition targetTilePosition = new TilePosition(unit.getTilePosition().getX() + 6, unit.getTilePosition().getY()); // Creep 이 있는 곳이어야 한다
-			//			unit.build(UnitType.Zerg_Nydus_Canal, targetTilePosition);
-			//		}
-			//	}
-			//}
-
-			// 퀸 - 인페스티드 테란 : 테란 Terran_Command_Center 건물의 HitPoint가 낮을 때, 퀸을 들여보내서 Zerg_Infested_Command_Center 로 바꾸면, 그 건물에서 실행 됨
-			BuildManager.Instance().buildQueue.queueAsLowestPriority(UnitType.Zerg_Infested_Terran);
-			*/
+			BuildManager.Instance().buildQueue.queueAsLowestPriority(UnitType.Zerg_Zergling);
+			BuildManager.Instance().buildQueue.queueAsLowestPriority(UnitType.Zerg_Zergling);
+			BuildManager.Instance().buildQueue.queueAsLowestPriority(UnitType.Zerg_Zergling);
+			BuildManager.Instance().buildQueue.queueAsLowestPriority(InformationManager.Instance().getWorkerType());
+			BuildManager.Instance().buildQueue.queueAsLowestPriority(InformationManager.Instance().getWorkerType());
+			BuildManager.Instance().buildQueue.queueAsLowestPriority(InformationManager.Instance().getWorkerType());
+			BuildManager.Instance().buildQueue.queueAsLowestPriority(InformationManager.Instance().getRefineryBuildingType());
+			
+			BuildManager.Instance().buildQueue.queueAsLowestPriority(UnitType.Zerg_Hatchery, BuildOrderItem.SeedPositionStrategy.FirstExpansionLocation);
+			BuildManager.Instance().buildQueue.queueAsLowestPriority(UpgradeType.Metabolic_Boost);
+			
+			BuildManager.Instance().buildQueue.queueAsLowestPriority(UnitType.Zerg_Zergling);
+			BuildManager.Instance().buildQueue.queueAsLowestPriority(UnitType.Zerg_Zergling);
+			BuildManager.Instance().buildQueue.queueAsLowestPriority(UnitType.Zerg_Zergling);
+			BuildManager.Instance().buildQueue.queueAsLowestPriority(UnitType.Zerg_Zergling);
+			BuildManager.Instance().buildQueue.queueAsLowestPriority(UnitType.Zerg_Zergling);
+			BuildManager.Instance().buildQueue.queueAsLowestPriority(UnitType.Zerg_Zergling);
 		}
 	}
 
@@ -720,12 +581,12 @@ public class StrategyManager {
 				}
 			}
 
-			// 전투 유닛이 2개 이상 생산되었고, 적군 위치가 파악되었으면 총공격 모드로 전환
-			if (MyBotModule.Broodwar.self().completedUnitCount(InformationManager.Instance().getBasicCombatUnitType()) > 2) {
-				if (InformationManager.Instance().enemyPlayer != null
-					&& InformationManager.Instance().enemyRace != Race.Unknown  
-					&& InformationManager.Instance().getOccupiedBaseLocations(InformationManager.Instance().enemyPlayer).size() > 0) {				
-					isFullScaleAttackStarted = true;
+			// Zerg_Zergling 유닛이 6개 이상 생상되었고, 적군 위치가 파악되었으면 총공격 모드로 전환
+	        if (MyBotModule.Broodwar.self().completedUnitCount(UnitType.Zerg_Zergling) >= 6) {
+				if(InformationManager.Instance().enemyPlayer != null 
+				        && InformationManager.Instance().enemyRace != Race.Unknown
+					   && InformationManager.Instance().getOccupiedBaseLocations(InformationManager.Instance().enemyPlayer).size() > 0){
+						isFullScaleAttackStarted = true;
 				}
 			}
 		}
