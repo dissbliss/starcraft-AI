@@ -33,11 +33,11 @@ public class WorkerManager {
 	
 	public void update() {
 		
-		updateWorkers1();
+		//updateWorkers1();
 		
 		//updateWorkers2();	
 
-		//updateWorkers3();		
+		updateWorkers3();		
 	}
 
 	public void updateWorkers1() {
@@ -51,12 +51,14 @@ public class WorkerManager {
 				Unit closestMineral = getClosestMineralFrom(unit);
 
 				if (closestMineral != null) {
-					System.out.println("closestMineral from " + unit.getType()+ " " + unit.getID()
-						+ " is " + closestMineral.getType() + " " + closestMineral.getID() 
-						+ " at " + closestMineral.getTilePosition().getX() + "," + closestMineral.getTilePosition().getY());
-
-					// 매 frame 마다 Right Click 을 하는 것이므로, 결국 해당 unit 은 아무 일도 못하게 된다. 
-					unit.gather(closestMineral);
+					if (unit.isIdle()) {
+						System.out.println("closestMineral from " + unit.getType()+ " " + unit.getID()
+							+ " is " + closestMineral.getType() + " " + closestMineral.getID() 
+							+ " at " + closestMineral.getTilePosition().getX() + "," + closestMineral.getTilePosition().getY());
+	
+						// 매 frame 마다 Right Click 을 하는 것이므로, 결국 해당 unit 은 아무 일도 못하게 된다. 
+						unit.gather(closestMineral);
+					}
 				}
 			}
 		}
